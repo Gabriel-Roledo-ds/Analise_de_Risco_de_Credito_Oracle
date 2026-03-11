@@ -9,9 +9,9 @@
 
 | Campo | Valor |
 |-------|-------|
-| Data de criação | [PREENCHER] |
+| Data de criação | 10/03/2026 |
 | Home Region | sa-saopaulo-1 (Brazil East — São Paulo) |
-| Account Name | [PREENCHER] |
+| Account Name | analise_de_risco_roledo |
 | Tenancy OCID | `ocid1.tenancy.oc1..[REDACTED — salvo localmente]` |
 
 **Decisão — Home Region São Paulo:**  
