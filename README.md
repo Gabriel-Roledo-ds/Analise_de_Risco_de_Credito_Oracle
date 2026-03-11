@@ -9,7 +9,7 @@
 
 Construir um modelo de classificação de inadimplência — do zero, em produção real — usando Oracle Cloud Infrastructure (Always Free), seguindo a metodologia CRISP-DM.
 
-Este repositório documenta cada decisão técnica e de negócio tomada ao longo do projeto. Não é só código: é o raciocínio por trás de cada escolha.
+Este projeto será desenvolvido ao longo da minha formação em Análise e Ciência de Dados e cada decisão técnica e de negócio será documentada aqui.
 
 ---
 
@@ -55,7 +55,7 @@ Oracle APEX Dashboard        ← Monitoramento de score e drift (Fase 6 — plan
 ## Estrutura do Repositório
 
 ```
-credit-risk-oci/
+Analise_de_Risco_de_Credito_Oracle/
 ├── README.md                          ← Este arquivo
 ├── docs/
 │   ├── setup_log.md                   ← Fase 0: infraestrutura OCI
@@ -80,7 +80,7 @@ credit-risk-oci/
 
 | Fase | Status | Entregável |
 |------|--------|------------|
-| 0 — Setup OCI | ✅ Concluído | VCN + Buckets + ATP + Notebook Session |
+| 0 — Setup OCI | 🔄 Em andamento | VCN + Buckets + ATP + Notebook Session |
 | 1 — Business Understanding | 🔄 Em andamento | `docs/business_understanding.md` |
 | 2 — Data Understanding | ⏳ Pendente | `notebooks/01_eda.ipynb` |
 | 3 — Data Preparation | ⏳ Pendente | Tabelas silver + gold no ATP |
@@ -106,35 +106,18 @@ credit-risk-oci/
 ## Decisões de Design
 
 **Por que OCI e não Colab?**  
-Colab não persiste dados entre sessões e não tem banco relacional nativo. O OCI Always Free entrega Object Storage + ATP + Notebook com persistência real — o mesmo stack que fintechs usam em produção, sem custo.
+O OCI Always Free entrega Object Storage + ATP + Notebook — Além disso, pretendo me especializar no ambiente Oracle e desenvolver este projeto partiu dessa decisão.
 
 **Por que SQL First?**  
-Feature engineering em SQL fica versionado no banco, é auditável e reproduzível sem depender de ambiente Python. Queries documentadas são artefatos de portfólio que qualquer engenheiro ou analista consegue ler.
+Feature engineering em SQL fica versionado no banco, é auditável e reproduzível sem depender de ambiente Python.
 
 **Por que LightGBM?**  
 Roda dentro do limite de 1 OCPU / 1 GB RAM do Always Free. Lida nativamente com desbalanceamento 85/15 via `class_weight='balanced'`. Feature importance nativa facilita explicabilidade para stakeholders de negócio.
 
----
-
-## Como Reproduzir
-
-```bash
-# 1. Clone o repositório
-git clone https://github.com/[seu-usuario]/[nome-do-repo].git
-
-# 2. Instale dependências
-pip install -r requirements.txt
-
-# 3. Configure credenciais OCI
-# Siga: docs/setup_log.md → seção "Configuração do OCI CLI"
-
-# 4. Execute os notebooks na ordem:
-# notebooks/01_eda.ipynb
-# notebooks/02_data_preparation.ipynb
-# notebooks/03_modeling.ipynb
-```
+**Todas as decisões tomadas nesse início de projeto passarão pelo crivo do teste prático e podem mudar ao longo do desenvolvimento**
 
 ---
+
 
 ## Posts no LinkedIn
 
