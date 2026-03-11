@@ -1,0 +1,154 @@
+# Credit Risk Analytics — Give Me Some Credit
+
+> Pipeline end-to-end de análise de risco de crédito construído no OCI Always Free.  
+> Dataset: [Give Me Some Credit](https://www.kaggle.com/c/GiveMeSomeCredit) · 150.000 registros · Target: `SeriousDlqin2yrs`
+
+---
+
+## Objetivo
+
+Construir um modelo de classificação de inadimplência — do zero, em produção real — usando Oracle Cloud Infrastructure (Always Free), seguindo a metodologia CRISP-DM.
+
+Este repositório documenta cada decisão técnica e de negócio tomada ao longo do projeto. Não é só código: é o raciocínio por trás de cada escolha.
+
+---
+
+## Arquitetura
+
+```
+Kaggle CSV
+    │
+    ▼
+OCI Object Storage          ← Data Lake em camadas
+  ├── credit-risk-bronze     ← Dados brutos, sem transformação
+  ├── credit-risk-silver     ← Dados limpos, nulos tratados
+  └── credit-risk-gold       ← Features engineered, prontas para modelagem
+    │
+    ▼
+Oracle Autonomous Database  ← SQL First: EDA, feature engineering, monitoramento
+    │
+    ▼
+OCI Data Science Notebook   ← Python: imputação, treino, avaliação
+    │
+    ▼
+OCI Model Catalog           ← Modelo versionado com metadados
+    │
+    ▼
+OCI Model Deployment        ← Endpoint HTTP (Fase 6 — planejada)
+Oracle APEX Dashboard        ← Monitoramento de score e drift (Fase 6 — planejada)
+```
+
+---
+
+## Resultados (atualizados ao fim de cada fase)
+
+| Métrica | Meta mínima | Resultado |
+|---------|-------------|-----------|
+| AUC-ROC | ≥ 0.75 | — |
+| KS | ≥ 0.35 | — |
+| Gini | ≥ 0.50 | — |
+
+> Resultados serão preenchidos ao final da Fase 4 (Modeling).
+
+---
+
+## Estrutura do Repositório
+
+```
+credit-risk-oci/
+├── README.md                          ← Este arquivo
+├── docs/
+│   ├── setup_log.md                   ← Fase 0: infraestrutura OCI
+│   ├── business_understanding.md      ← Fase 1: definição do problema
+│   └── architecture_diagram.png      ← Diagrama da arquitetura (a adicionar)
+├── notebooks/
+│   ├── 01_eda.ipynb                   ← Fase 2: Exploratory Data Analysis
+│   ├── 02_data_preparation.ipynb     ← Fase 3: limpeza e feature engineering
+│   └── 03_modeling.ipynb             ← Fase 4: treino e avaliação
+├── sql/
+│   ├── 01_create_tables.sql          ← DDL das tabelas bronze/silver/gold
+│   ├── 02_eda_queries.sql            ← Queries exploratórias documentadas
+│   └── 03_feature_engineering.sql   ← Features via SQL (CTE + CASE WHEN)
+├── src/
+│   └── pipeline.py                   ← Script de pipeline reproduzível
+└── requirements.txt                  ← Dependências Python
+```
+
+---
+
+## Metodologia: CRISP-DM
+
+| Fase | Status | Entregável |
+|------|--------|------------|
+| 0 — Setup OCI | ✅ Concluído | VCN + Buckets + ATP + Notebook Session |
+| 1 — Business Understanding | 🔄 Em andamento | `docs/business_understanding.md` |
+| 2 — Data Understanding | ⏳ Pendente | `notebooks/01_eda.ipynb` |
+| 3 — Data Preparation | ⏳ Pendente | Tabelas silver + gold no ATP |
+| 4 — Modeling | ⏳ Pendente | Modelo no OCI Model Catalog |
+| 5 — Evaluation | ⏳ Pendente | Relatório de avaliação |
+| 6 — Deployment | 📋 Planejado | Endpoint + Dashboard APEX |
+
+---
+
+## Stack Técnica
+
+| Camada | Tecnologia | Tier |
+|--------|-----------|------|
+| Data Lake | OCI Object Storage | Always Free |
+| Banco analítico | Oracle Autonomous Database 19c | Always Free |
+| Modelagem | OCI Data Science (VM.Standard.E2.1.Micro) | Always Free |
+| Orquestração SQL | Oracle SQL (dialect 19c) | — |
+| Python | 3.x · pandas · scikit-learn · LightGBM | — |
+| Versionamento | GitHub | Free |
+
+---
+
+## Decisões de Design
+
+**Por que OCI e não Colab?**  
+Colab não persiste dados entre sessões e não tem banco relacional nativo. O OCI Always Free entrega Object Storage + ATP + Notebook com persistência real — o mesmo stack que fintechs usam em produção, sem custo.
+
+**Por que SQL First?**  
+Feature engineering em SQL fica versionado no banco, é auditável e reproduzível sem depender de ambiente Python. Queries documentadas são artefatos de portfólio que qualquer engenheiro ou analista consegue ler.
+
+**Por que LightGBM?**  
+Roda dentro do limite de 1 OCPU / 1 GB RAM do Always Free. Lida nativamente com desbalanceamento 85/15 via `class_weight='balanced'`. Feature importance nativa facilita explicabilidade para stakeholders de negócio.
+
+---
+
+## Como Reproduzir
+
+```bash
+# 1. Clone o repositório
+git clone https://github.com/[seu-usuario]/[nome-do-repo].git
+
+# 2. Instale dependências
+pip install -r requirements.txt
+
+# 3. Configure credenciais OCI
+# Siga: docs/setup_log.md → seção "Configuração do OCI CLI"
+
+# 4. Execute os notebooks na ordem:
+# notebooks/01_eda.ipynb
+# notebooks/02_data_preparation.ipynb
+# notebooks/03_modeling.ipynb
+```
+
+---
+
+## Posts no LinkedIn
+
+Cada fase gera um post técnico documentando o processo:
+
+1. [Criei minha primeira arquitetura cloud — de graça](#) *(Fase 0)*
+2. [Antes de codar, respondi 6 perguntas](#) *(Fase 1)*
+3. [150k clientes. O que os dados dizem antes do modelo](#) *(Fase 2)*
+4. [Feature engineering com SQL aplicado a crédito](#) *(Fase 3)*
+5. [O número que analistas de crédito realmente olham](#) *(Fase 4)*
+6. [O modelo passou? Validando contra critérios de negócio](#) *(Fase 5)*
+
+> Links serão adicionados conforme os posts forem publicados.
+
+---
+
+*Projeto em construção · Atualizado semanalmente*

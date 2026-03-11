@@ -1,0 +1,88 @@
+# ============================================================
+# CREDENCIAIS E SEGREDOS — NUNCA COMMITAR
+# ============================================================
+
+# OCI CLI
+.oci/
+*.pem
+*.key
+wallet/
+Wallet_*/
+cwallet.sso
+ewallet.p12
+tnsnames.ora
+sqlnet.ora
+ojdbc.properties
+
+# Variáveis de ambiente
+.env
+.env.*
+config.ini
+secrets.yaml
+
+# ============================================================
+# DADOS — NÃO VERSIONAR (usar Object Storage)
+# ============================================================
+
+# Datasets brutos
+*.csv
+*.xlsx
+*.parquet
+data/
+
+# Modelos serializados (usar OCI Model Catalog)
+*.pkl
+*.joblib
+*.h5
+*.onnx
+models/
+
+# ============================================================
+# PYTHON
+# ============================================================
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Ambientes virtuais
+venv/
+env/
+ENV/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# mypy
+.mypy_cache/
+
+# ============================================================
+# IDEs E SISTEMA
+# ============================================================
+
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ============================================================
+# LOGS
+# ============================================================
+
+*.log
+logs/

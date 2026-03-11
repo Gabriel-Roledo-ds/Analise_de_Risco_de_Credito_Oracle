@@ -1,0 +1,19 @@
+-- DDL — Tabelas Bronze, Silver e Gold
+-- Fase 2 e 3 do projeto
+-- A ser preenchido na Fase 2 (Data Understanding)
+
+-- Exemplo de estrutura (Oracle 19c):
+-- CREATE TABLE credit_bronze (
+--     id                                    NUMBER,
+--     SeriousDlqin2yrs                      NUMBER(1),
+--     RevolvingUtilizationOfUnsecuredLines   NUMBER,
+--     age                                   NUMBER(3),
+--     NumberOfTime30_59DaysPastDueNotWorse   NUMBER,
+--     DebtRatio                             NUMBER,
+--     MonthlyIncome                         NUMBER,
+--     NumberOfOpenCreditLinesAndLoans       NUMBER,
+--     NumberOfTimes90DaysLate               NUMBER,
+--     NumberRealEstateLoansOrLines          NUMBER,
+--     NumberOfTime60_89DaysPastDueNotWorse   NUMBER,
+--     NumberOfDependents                    NUMBER
+-- );
