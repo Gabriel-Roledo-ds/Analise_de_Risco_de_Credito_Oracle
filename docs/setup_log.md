@@ -15,29 +15,57 @@
 | Tenancy OCID | `ocid1.tenancy.oc1..[REDACTED — salvo localmente]` |
 
 **Decisão — Home Region São Paulo:**  
-Escolha irreversível. Motivos: (1) latência mínima para operações brasileiras, (2) dados não saem do território nacional — conformidade com LGPD, (3) única região OCI Always Free disponível no Brasil.
+Motivos: (1) latência mínima para operações brasileiras, (2) dados não saem do território nacional — conformidade com LGPD, (3) única região OCI Always Free disponível no Brasil.
 
 ---
 
-## IAM — Identidade e Acesso
+# IAM Setup — Decisões e Raciocínio
 
-Estrutura criada seguindo o princípio de **least privilege**: nenhuma operação é feita com o usuário root após o setup inicial.
+**Data:** 2026-03-11  
+**Fase:** CRISP-DM Fase 0 — Setup OCI (Terça)
 
-| Recurso | Nome | Finalidade |
-|---------|------|-----------|
-| Compartment | `credit-risk` | Isola todos os recursos do projeto |
-| Group | `credit-risk-admins` | Agrupa usuários com permissão no compartment |
-| User | `[PREENCHER]` | Usuário de trabalho (não-root) |
-| Policy | `credit-risk-policy` | Define permissões do grupo no compartment |
+## O que foi configurado
 
-**Policy criada:**
-```sql
-Allow group credit-risk-admins to manage all-resources in compartment credit-risk
+| Recurso | Nome | Descrição |
+|---|---|---|
+| Compartment | `analise_de_risco_de_credito` | Isola todos os recursos do projeto |
+| Group | `desenvolvedores_analise_de_risco` | Agrupa usuários com permissão no compartment |
+| User | `gabrielroledo.ds@gmail.com` | Usuário de trabalho |
+| Policy | `policy_analise_de_risco_de_credito` | Define permissões do grupo no compartment |
+| API Key | gerada e configurada localmente | Autenticação CLI/SDK — nunca versionar |
+
+## Decisões tomadas
+
+**Por que Compartment separado do root?**  
+Isola billing, escopo de policies e permite deletar o projeto inteiro sem afetar o tenant.
+
+**Por que não criar usuário de serviço separado?**  
+Conta Always Free solo — o usuário principal já é o operador do pipeline. Usuário separado seria overhead sem benefício real.
+
+**Por que policy no root e não no compartment?**  
+Groups de Identity Domain só são resolvidos corretamente por policies no root. Policy no compartment não consegue validar a sintaxe `'Default'/'desenvolvedores_analise_de_risco'`.
+
+**Por que `manage` e não `use`?**  
+Ambiente de desenvolvimento solo. `manage` dá flexibilidade para criar e deletar recursos sem revisitar o IAM a cada nova etapa.
+
+## Statements da Policy
+```
+Allow group 'Default'/'desenvolvedores_analise_de_risco' to manage object-family in compartment analise_de_risco_de_credito
+Allow group 'Default'/'desenvolvedores_analise_de_risco' to manage autonomous-database-family in compartment analise_de_risco_de_credito
+Allow group 'Default'/'desenvolvedores_analise_de_risco' to manage data-science-family in compartment analise_de_risco_de_credito
+Allow group 'Default'/'desenvolvedores_analise_de_risco' to manage virtual-network-family in compartment analise_de_risco_de_credito
 ```
 
-**Decisão — Compartment isolado:**  
-Qualquer recurso criado fora do compartment `credit-risk` não aparece nos relatórios de custo do projeto e não é gerenciado pelas policies. Isolamento é boa prática mesmo no Always Free.
+## Pendente
 
+- [ ] `~/.oci/config` configurado (Quarta)
+- [ ] OCI CLI instalado e testado (Quarta)
+```
+
+---
+
+```
+docs: IAM setup - compartment, group, policy e API key (Fase 0 - Terça)
 ---
 
 ## OCI CLI — Configuração Local
