@@ -58,8 +58,8 @@ Allow group 'Default'/'desenvolvedores_analise_de_risco' to manage virtual-netwo
 
 ## Pendente
 
-- [ ] `~/.oci/config` configurado (Quarta)
-- [ ] OCI CLI instalado e testado (Quarta)
+- [x] `~/.oci/config` configurado
+- [x] OCI CLI instalado e testado 
 ```
 
 ---
