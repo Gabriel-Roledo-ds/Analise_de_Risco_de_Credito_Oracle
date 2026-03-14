@@ -62,8 +62,6 @@ Allow group 'Default'/'desenvolvedores_analise_de_risco' to manage virtual-netwo
 - [x] OCI CLI instalado e testado 
 ```
 
----
-
 ```
 docs: IAM setup - compartment, group, policy e API key (Fase 0 - Terça)
 ---
