@@ -108,6 +108,10 @@ oci iam region list --output table
 
 ---
 
+> ⚠️ **Execução em andamento a partir daqui**
+
+
+
 ## Object Storage — Data Lake
 
 | Bucket | Finalidade | Visibilidade |
