@@ -1,7 +1,7 @@
 # Setup Log — Fase 0: Infraestrutura OCI
 
 > CRISP-DM: Pré-requisito de infraestrutura  
-> Duração: 1 semana · Status: ✅ Concluído
+
 
 ---
 
@@ -56,16 +56,23 @@ Allow group 'Default'/'desenvolvedores_analise_de_risco' to manage data-science-
 Allow group 'Default'/'desenvolvedores_analise_de_risco' to manage virtual-network-family in compartment analise_de_risco_de_credito
 ```
 
-## Pendente
+## OCI CLI + Autenticação
 
-- [x] `~/.oci/config` configurado
-- [x] OCI CLI instalado e testado 
+### Concluído
+- [x] OCI CLI 3.76.0 instalada via instalador oficial (`install.sh`)
+- [x] Pacote `db` (cx_Oracle) descartado — incompatível com Python 3.12
+- [x] Chave privada movida para `~/.oci/oci_api_key.pem`
+- [x] `~/.oci/config` criado e configurado
+- [x] Permissões aplicadas: `chmod 600` em config e key
+- [x] `oci iam region list` validado — autenticação OK
+- [x] `oci iam compartment get` validado — policy IAM OK
+
+
+### Decisões
+- `oracledb` substituirá `cx_Oracle` na Fase 4
+- Estrutura de documentação definida: `setup_log.md` (visão geral cronológica) + `docs/setup/` (detalhes técnicos por componente)
+
 ```
-
-```
-docs: IAM setup - compartment, group, policy e API key (Fase 0 - Terça)
----
-
 ## OCI CLI — Configuração Local
 
 ```bash
@@ -92,10 +99,10 @@ oci iam region list --output table
 
 | Componente | Nome | Configuração |
 |-----------|------|-------------|
-| VCN | `credit-risk-vcn` | CIDR: 10.0.0.0/16 |
-| Internet Gateway | `credit-risk-igw` | Acesso público de saída |
-| Public Subnet | `credit-risk-subnet-public` | CIDR: 10.0.0.0/24 |
-| Security List | `credit-risk-sl` | Entrada: 443 (HTTPS), 1522 (ATP) |
+| VCN | `vcn_analise_de_risco_de_credito' | CIDR: 10.0.0.0/16 |
+| Internet Gateway | `vcn_analise_de_risco_de_credito' | Acesso público de saída |
+| Public Subnet | `vcn_analise_de_risco_de_credito` | CIDR: 10.0.0.0/24 |
+| Security List | `vcn_analise_de_risco_de_credito` | Entrada: 443 (HTTPS), 1522 (ATP) |
 
 **Criado via:** VCN Wizard (opção "VCN with Internet Connectivity") — gera Internet Gateway e route tables automaticamente.
 
