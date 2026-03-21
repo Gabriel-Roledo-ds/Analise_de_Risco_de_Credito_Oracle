@@ -160,47 +160,16 @@ Padrão adotado por fintechs e bancos digitais (Nubank, Inter, C6). Bronze prese
 - [x] pandas, numpy, matplotlib, sklearn — OK
 - [x] lightgbm instalado via pip — OK
 - [x] oracledb instalado via pip — OK
-```
 
 ---
 
-## Budget Alert
+## Encerramento da Fase 0
 
-**Configurado:** Alerta em $1 USD — notificação por e-mail se qualquer recurso pago for provisionado acidentalmente.
+**Data de conclusão:** 21/03/2026  
+**Commits:** `e964707` → `b44bd56` → `e6f96ee`
 
-Caminho: Billing → Budgets → Create Budget
+Infraestrutura OCI completamente provisionada e validada. Todos os componentes do pipeline estão operacionais: dados podem ser ingeridos no Object Storage, processados no ATP e modelados no ambiente Data Science — sem custo, dentro do Always Free tier.
 
----
 
-## Checklist Final da Fase 0
-
-- [ ] Conta OCI ativa com e-mail verificado
-- [ ] Home Region definida como São Paulo
-- [ ] Compartment `credit-risk` criado
-- [ ] IAM: Group + User + Policy configurados
-- [ ] OCI CLI instalado e autenticado localmente
-- [ ] VCN com Internet Gateway e Subnet pública
-- [ ] 3 buckets criados (bronze, silver, gold)
-- [ ] ATP provisionado e acessível via SQL Worksheet
-- [ ] Wallet do ATP salva localmente (nunca no repositório)
-- [ ] Notebook Session ativa com `import oci` sem erro
-- [ ] Budget Alert configurado em $1 USD
-- [ ] `.gitignore` protegendo credenciais
-
----
-
-## Erros Encontrados e Soluções
-
-> *Documente aqui qualquer erro que encontrar durante o setup, com a solução. Isso vira documentação valiosa para quem reproduzir o projeto.*
-
-| Erro | Contexto | Solução |
-|------|---------|---------|
-| — | — | — |
-
----
-
-## Próxima Fase
-
-**Fase 1 — Business Understanding**  
 Antes de qualquer código: definir o problema de negócio, as métricas de sucesso e as restrições do modelo.  
 Entregável: `docs/business_understanding.md`
