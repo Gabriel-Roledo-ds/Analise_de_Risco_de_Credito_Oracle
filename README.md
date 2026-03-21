@@ -20,9 +20,9 @@ Kaggle CSV
     │
     ▼
 OCI Object Storage          ← Data Lake em camadas
-  ├── credit-risk-bronze     ← Dados brutos, sem transformação
-  ├── credit-risk-silver     ← Dados limpos, nulos tratados
-  └── credit-risk-gold       ← Features engineered, prontas para modelagem
+  ├── risco-de-credito-bronze     ← Dados brutos, sem transformação
+  ├── risco-de-credito-silver     ← Dados limpos, nulos tratados
+  └── risco-de-credito-gold       ← Features engineered, prontas para modelagem
     │
     ▼
 Oracle Autonomous Database  ← SQL First: EDA, feature engineering, monitoramento
