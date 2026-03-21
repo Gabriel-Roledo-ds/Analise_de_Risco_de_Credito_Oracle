@@ -137,23 +137,29 @@ Padrão adotado por fintechs e bancos digitais (Nubank, Inter, C6). Bronze prese
 
 ---
 
-> ⚠️ **Execução em andamento a partir daqui**
 
 
-## OCI Data Science
 
-| Campo | Valor |
-|-------|-------|
-| Projeto | `credit-risk-ds` |
-| Notebook Session | `credit-risk-nb-01` |
-| Shape | VM.Standard.E2.1.Micro (Always Free) |
-| Block Volume | 50 GB |
+## ## OCI Data Science
 
-**Validação do ambiente:**
-```python
-import oci
-print(oci.__version__)
-# Esperado: versão sem ImportError
+**Projeto:** `projeto_analise_de_risco`
+**Notebook Session:** `notebook_analise_de_risco`
+**Shape:** VM.Standard.E4.Flex · 1 OCPU · 16 GB RAM · 100 GB block storage
+**Networking:** Default networking · Public endpoint
+**Autenticação:** Resource Principal (sem ~/.oci/config no notebook)
+
+**Policy adicionada (root):**
+- `allow any-user to manage object-family in compartment analise_de_risco_de_credito where all {request.principal.type='datasciencenotebooksession'}`
+- `allow any-user to manage data-science-family in compartment analise_de_risco_de_credito where all {request.principal.type='datasciencenotebooksession'}`
+
+**Validações concluídas:**
+- [x] `import oci` — OK
+- [x] Resource Principal autenticado
+- [x] Object Storage namespace: grqhsdxamd8m
+- [x] 3 buckets listados: bronze, silver, gold
+- [x] pandas, numpy, matplotlib, sklearn — OK
+- [x] lightgbm instalado via pip — OK
+- [x] oracledb instalado via pip — OK
 ```
 
 ---
