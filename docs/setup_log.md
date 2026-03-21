@@ -1,4 +1,4 @@
-# Setup Log — Fase 0: Infraestrutura OCI
+# Fase 0: Infraestrutura OCI
 
 > CRISP-DM: Pré-requisito de infraestrutura  
 
