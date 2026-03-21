@@ -108,17 +108,13 @@ oci iam region list --output table
 
 ---
 
-> ⚠️ **Execução em andamento a partir daqui**
-
-
-
 ## Object Storage — Data Lake
 
 | Bucket | Finalidade | Visibilidade |
 |--------|-----------|-------------|
-| `credit-risk-bronze` | Dados brutos do Kaggle (CSV original) | Private |
-| `credit-risk-silver` | Dados limpos, nulos tratados | Private |
-| `credit-risk-gold` | Features engineered, prontas para ML | Private |
+| `risco-de-credito-bronze` | Dados brutos do Kaggle (CSV original) | Private |
+| `risco-de-credito-silver` | Dados limpos, nulos tratados | Private |
+| `risco-de-credito-gold` | Features engineered, prontas para ML | Private |
 
 **Decisão — 3 camadas (Medallion Architecture):**  
 Padrão adotado por fintechs e bancos digitais (Nubank, Inter, C6). Bronze preserva o dado original — qualquer erro nas transformações permite reprocessar da fonte sem re-download. Silver e Gold são derivados reproduzíveis.
@@ -129,17 +125,20 @@ Padrão adotado por fintechs e bancos digitais (Nubank, Inter, C6). Bronze prese
 
 | Campo | Valor |
 |-------|-------|
-| Nome | `credit-risk-atp` |
+| Nome | `atp_analise_de_risco` |
 | Tipo | Autonomous Transaction Processing |
 | OCPU | 1 (Always Free) |
 | Storage | 20 GB (Always Free) |
 | Versão Oracle | 19c |
 | Wallet baixada | ✅ |
 
-**Conexão testada via SQL Worksheet:** ✅  
-**Schema criado:** `CREDITRISK`
+**Conexão testada via SQL Worksheet:** 
+**Schema criado:** `ANALISEDERISCO`
 
 ---
+
+> ⚠️ **Execução em andamento a partir daqui**
+
 
 ## OCI Data Science
 
