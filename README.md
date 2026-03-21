@@ -56,22 +56,23 @@ Oracle APEX Dashboard        ← Monitoramento de score e drift (Fase 6 — plan
 
 ```
 Analise_de_Risco_de_Credito_Oracle/
-├── README.md                          ← Este arquivo
+├── README.md
 ├── docs/
-│   ├── setup_log.md                   ← Fase 0: infraestrutura OCI
-│   ├── business_understanding.md      ← Fase 1: definição do problema
-│   └── architecture_diagram.png      ← Diagrama da arquitetura (a adicionar)
+│   ├── business_understanding.md      ← Fase 1: definição do problema (a criar)
+│   ├── architecture_diagram.png       ← Diagrama da arquitetura (a adicionar)
+│   └── setup_log/
+│       └── fase_0.md                  ← Fase 0: infraestrutura OCI ✅
 ├── notebooks/
 │   ├── 01_eda.ipynb                   ← Fase 2: Exploratory Data Analysis
-│   ├── 02_data_preparation.ipynb     ← Fase 3: limpeza e feature engineering
-│   └── 03_modeling.ipynb             ← Fase 4: treino e avaliação
+│   ├── 02_data_preparation.ipynb      ← Fase 3: limpeza e feature engineering
+│   └── 03_modeling.ipynb              ← Fase 4: treino e avaliação
 ├── sql/
-│   ├── 01_create_tables.sql          ← DDL das tabelas bronze/silver/gold
-│   ├── 02_eda_queries.sql            ← Queries exploratórias documentadas
-│   └── 03_feature_engineering.sql   ← Features via SQL (CTE + CASE WHEN)
+│   ├── 01_create_tables.sql           ← DDL das tabelas bronze/silver/gold
+│   ├── 02_eda_queries.sql             ← Queries exploratórias documentadas
+│   └── 03_feature_engineering.sql    ← Features via SQL (CTE + CASE WHEN)
 ├── src/
-│   └── pipeline.py                   ← Script de pipeline reproduzível
-└── requirements.txt                  ← Dependências Python
+│   └── pipeline.py                    ← Script de pipeline reproduzível
+└── requirements.txt                   ← Dependências Python
 ```
 
 ---
