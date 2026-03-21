@@ -140,7 +140,7 @@ Padrão adotado por fintechs e bancos digitais (Nubank, Inter, C6). Bronze prese
 
 
 
-## ## OCI Data Science
+## OCI Data Science
 
 **Projeto:** `projeto_analise_de_risco`
 **Notebook Session:** `notebook_analise_de_risco`
