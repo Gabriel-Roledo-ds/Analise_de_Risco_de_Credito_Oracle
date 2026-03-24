@@ -166,7 +166,7 @@ Padrão adotado por fintechs e bancos digitais (Nubank, Inter, C6). Bronze prese
 ## Encerramento da Fase 0
 
 **Data de conclusão:** 21/03/2026  
-**Commits:** `e964707` → `b44bd56` → `e6f96ee`
+
 
 Infraestrutura OCI completamente provisionada e validada. Todos os componentes do pipeline estão operacionais: dados podem ser ingeridos no Object Storage, processados no ATP e modelados no ambiente Data Science — sem custo, dentro do Always Free tier.
 
