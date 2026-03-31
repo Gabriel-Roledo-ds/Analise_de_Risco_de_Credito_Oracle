@@ -58,10 +58,10 @@ Oracle APEX Dashboard        ← Monitoramento de score e drift (Fase 6 — plan
 Analise_de_Risco_de_Credito_Oracle/
 ├── README.md
 ├── docs/
-│   ├── business_understanding.md      
 │   ├── architecture_diagram.png       ← Diagrama da arquitetura (a adicionar)
 │   └── setup_log/
 │       └── fase_0.md                  ← Fase 0: infraestrutura OCI ✅
+│       └── fase_01.md                 ← Fase 01: Business Understanding ✅
 ├── notebooks/
 │   ├── 01_eda.ipynb                   ← Fase 2: Exploratory Data Analysis
 │   ├── 02_data_preparation.ipynb      ← Fase 3: limpeza e feature engineering
