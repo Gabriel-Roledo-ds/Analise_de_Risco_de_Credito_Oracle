@@ -124,8 +124,8 @@ Roda dentro do limite de 1 OCPU / 1 GB RAM do Always Free. Lida nativamente com 
 
 Cada fase gera um post técnico documentando o processo:
 
-1. [Das Certs Oracle Foundation pra mão na massa: Análise de Risco no Always Free OCI](https://www.linkedin.com/posts/gabriel-roledo_recursos-oci-activity-7441544228934938624-3gzG?utm_source=share&utm_medium=member_desktop&rcm=ACoAADV8pn4B5h_wYfKEMyUD5EjN2KxHtve26gg) *(Fase 0)*✅
-2. [Business Understanding, Proxies de Alto Risco e Por Que Evitá-los](https://www.linkedin.com/posts/gabriel-roledo_business-understanding-activity-7444226920428228608-qNDb?utm_source=share&utm_medium=member_desktop&rcm=ACoAADV8pn4B5h_wYfKEMyUD5EjN2KxHtve26gg) *(Fase 1)*✅
+1. [Das Certs Oracle Foundation pra mão na massa: Análise de Risco no Always Free OCI](https://www.linkedin.com/posts/gabriel-roledo_recursos-oci-activity-7441544228934938624-3gzG?utm_source=share&utm_medium=member_desktop&rcm=ACoAADV8pn4B5h_wYfKEMyUD5EjN2KxHtve26gg) *(Fase 0)* ✅
+2. [Business Understanding, Proxies de Alto Risco e Por Que Evitá-los](https://www.linkedin.com/posts/gabriel-roledo_business-understanding-activity-7444226920428228608-qNDb?utm_source=share&utm_medium=member_desktop&rcm=ACoAADV8pn4B5h_wYfKEMyUD5EjN2KxHtve26gg) *(Fase 1)* ✅
 3. [150k clientes. O que os dados dizem antes do modelo](#) *(Fase 2)*
 4. [Feature engineering com SQL aplicado a crédito](#) *(Fase 3)*
 5. [O número que analistas de crédito realmente olham](#) *(Fase 4)*
