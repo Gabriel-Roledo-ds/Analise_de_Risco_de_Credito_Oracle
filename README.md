@@ -58,7 +58,7 @@ Oracle APEX Dashboard        ← Monitoramento de score e drift (Fase 6 — plan
 Analise_de_Risco_de_Credito_Oracle/
 ├── README.md
 ├── docs/
-│   ├── business_understanding.md      ← Fase 1: definição do problema (a criar)
+│   ├── business_understanding.md      
 │   ├── architecture_diagram.png       ← Diagrama da arquitetura (a adicionar)
 │   └── setup_log/
 │       └── fase_0.md                  ← Fase 0: infraestrutura OCI ✅
@@ -81,8 +81,8 @@ Analise_de_Risco_de_Credito_Oracle/
 
 | Fase | Status | Entregável |
 |------|--------|------------|
-| 0 — Setup OCI | 🔄 Em andamento | VCN + Buckets + ATP + Notebook Session |
-| 1 — Business Understanding | 🔄 Em andamento | `docs/business_understanding.md` |
+| 0 — Setup OCI | ✅ Concluído | `docs/setup_log/fase_0.md` |
+| 1 — Business Understanding | ✅ Concluído | `docs/business_understanding.md` |
 | 2 — Data Understanding | ⏳ Pendente | `notebooks/01_eda.ipynb` |
 | 3 — Data Preparation | ⏳ Pendente | Tabelas silver + gold no ATP |
 | 4 — Modeling | ⏳ Pendente | Modelo no OCI Model Catalog |
@@ -124,8 +124,8 @@ Roda dentro do limite de 1 OCPU / 1 GB RAM do Always Free. Lida nativamente com 
 
 Cada fase gera um post técnico documentando o processo:
 
-1. [Criei minha primeira arquitetura cloud — de graça](#) *(Fase 0)*
-2. [Antes de codar, respondi 6 perguntas](#) *(Fase 1)*
+1. [Das Certs Oracle Foundation pra mão na massa: Análise de Risco no Always Free OCI](https://www.linkedin.com/posts/gabriel-roledo_recursos-oci-activity-7441544228934938624-3gzG?utm_source=share&utm_medium=member_desktop&rcm=ACoAADV8pn4B5h_wYfKEMyUD5EjN2KxHtve26gg) *(Fase 0)*
+2. [Business Understanding, Proxies de Alto Risco e Por Que Evitá-los](https://www.linkedin.com/posts/gabriel-roledo_business-understanding-activity-7444226920428228608-qNDb?utm_source=share&utm_medium=member_desktop&rcm=ACoAADV8pn4B5h_wYfKEMyUD5EjN2KxHtve26gg) *(Fase 1)*
 3. [150k clientes. O que os dados dizem antes do modelo](#) *(Fase 2)*
 4. [Feature engineering com SQL aplicado a crédito](#) *(Fase 3)*
 5. [O número que analistas de crédito realmente olham](#) *(Fase 4)*
