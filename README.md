@@ -82,7 +82,7 @@ Analise_de_Risco_de_Credito_Oracle/
 | Fase | Status | Entregável |
 |------|--------|------------|
 | 0 — Setup OCI | ✅ Concluído | `docs/setup_log/fase_0.md` |
-| 1 — Business Understanding | ✅ Concluído | `docs/business_understanding.md` |
+| 1 — Business Understanding | ✅ Concluído | `docs/setup_log/fase_01.md` |
 | 2 — Data Understanding | ⏳ Pendente | `notebooks/01_eda.ipynb` |
 | 3 — Data Preparation | ⏳ Pendente | Tabelas silver + gold no ATP |
 | 4 — Modeling | ⏳ Pendente | Modelo no OCI Model Catalog |
