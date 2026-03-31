@@ -171,5 +171,4 @@ Padrão adotado por fintechs e bancos digitais (Nubank, Inter, C6). Bronze prese
 Infraestrutura OCI completamente provisionada e validada. Todos os componentes do pipeline estão operacionais: dados podem ser ingeridos no Object Storage, processados no ATP e modelados no ambiente Data Science — sem custo, dentro do Always Free tier.
 
 
-Antes de qualquer código: definir o problema de negócio, as métricas de sucesso e as restrições do modelo.  
-Entregável: `docs/business_understanding.md`
+
